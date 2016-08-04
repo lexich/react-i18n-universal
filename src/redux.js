@@ -41,7 +41,7 @@ export default function(opts = {}) {
   };
 
   function reducer(state=initialState, action) {
-    if (action.type) {
+    if (action.type === constant.update) {
       opts.cb instanceof Function && opts.cb(action.language);
       return { ...state, language: action.language };
     } else {
